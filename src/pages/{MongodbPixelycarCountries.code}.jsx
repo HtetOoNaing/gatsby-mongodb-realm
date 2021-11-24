@@ -5,6 +5,7 @@ const Country = ({
   data: {
     allMongodbPixelycarManufacturers: { nodes },
   },
+	params: { code }
 }) => {
   return (
     <div>
@@ -12,7 +13,7 @@ const Country = ({
       {nodes.map(manufacturer => (
         <Link
           key={manufacturer.code}
-          to={`/${manufacturer.code}`}
+          to={`/${code}/${manufacturer.code}`}
           style={{ padding: 10 }}
         >
           {manufacturer.name}
