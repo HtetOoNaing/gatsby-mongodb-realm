@@ -2,8 +2,6 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 export default function Home({ data: { allMongodbPixelycarCountries, allMongodbPixelycarManufacturers }}) {
-	console.log(allMongodbPixelycarCountries)
-	console.log(allMongodbPixelycarManufacturers)
 	// const [countries, setCountries] = useState([]);
 	// useEffect(() => {
 	// 	async function fetchData() {

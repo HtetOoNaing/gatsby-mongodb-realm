@@ -1,19 +1,31 @@
-import React from 'react'
+import React from "react"
 import { graphql, Link } from "gatsby"
 
-const Country = ({data: { allMongodbPixelycarManufacturers: { nodes } }}) => {
-	return (<div>
-		<h1>Manufacturers</h1>
-		{nodes.map(manufacturer => (
-			<Link key={manufacturer.code} to={`/${manufacturer.code}`} style={{padding: 10}}>{manufacturer.name}</Link>
-		))}
-	</div>)
+const Country = ({
+  data: {
+    allMongodbPixelycarManufacturers: { nodes },
+  },
+}) => {
+  return (
+    <div>
+      <h1>Manufacturers</h1>
+      {nodes.map(manufacturer => (
+        <Link
+          key={manufacturer.code}
+          to={`/${manufacturer.code}`}
+          style={{ padding: 10 }}
+        >
+          {manufacturer.name}
+        </Link>
+      ))}
+    </div>
+  )
 }
 
 export const query = graphql`
-	query GetManufacturer($mongodb_id: String){
+  query GetManufacturers($code: String) {
     allMongodbPixelycarManufacturers(
-      filter: {countries: {elemMatch: {_id: {eq: $mongodb_id}}}}
+      filter: { countries: { elemMatch: { code: { eq: $code } } } }
     ) {
       nodes {
         id
@@ -25,4 +37,4 @@ export const query = graphql`
   }
 `
 
-export default Country;
+export default Country
