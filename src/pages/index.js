@@ -19,5 +19,7 @@ export default function Home() {
 		}
 		fetchData()
 	}, [])
-	return <div>Hello world! {process.env.REALM_APP_ID}</div>
+	return <div>
+		{countries.map(country => <p key={country.code}>{country.name}</p>)}
+	</div>
 }
