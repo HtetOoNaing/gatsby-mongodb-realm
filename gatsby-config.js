@@ -10,5 +10,21 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+		{
+      resolve: "gatsby-source-mongodb",
+      options: {
+        dbName: "pixelycar",
+        collection: [`cars`, `countries`, 'manufacturers'],
+        connectionString: process.env.MONGODB_SERVER,
+        preserveObjectIds: true,
+        extraParams: {
+          replicaSet: "realmcluster-shard-00",
+          ssl: true,
+          authSource: "admin",
+          retryWrites: true,
+        },
+      },
+    },
+	],
 }
