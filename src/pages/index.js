@@ -24,11 +24,11 @@ export default function Home({ data: { allMongodbPixelycarCountries, allMongodbP
 	return <div>
 		<h1>Countries</h1>
 		{allMongodbPixelycarCountries.nodes.map(country => (
-			<Link key={country.code} to={`${country.code}`} style={{padding: 10}}>{country.name}</Link>
+			<Link key={country.code} to={`/${country.code}`} style={{padding: 10}}>{country.name}</Link>
 		))}
 		<h1>Manufacturers</h1>
 		{allMongodbPixelycarManufacturers.nodes.map(manufacturer => (
-			<Link key={manufacturer.code} to={`${manufacturer.code}`} style={{padding: 10}}>{manufacturer.name}</Link>
+			<Link key={manufacturer.code} to={`/${manufacturer.code}`} style={{padding: 10}}>{manufacturer.name}</Link>
 		))}
 	</div>
 }
