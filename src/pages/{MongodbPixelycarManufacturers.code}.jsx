@@ -14,7 +14,7 @@ const Manufacturer = ({
         {nodes.map(country => (
           <Link
             key={country.code}
-            to={`/${country.code}`}
+            to={`/${country.code}/${code}`}
             style={{ padding: 10 }}
           >
             <div style={{ display: "flex", alignItems: "center" }}>
