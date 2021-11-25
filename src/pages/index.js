@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
-export default function Home({ data: { allMongodbPixelycarCountries, allMongodbPixelycarManufacturers }}) {
+export default function Home({ data: { allMongodbPixelycarCountries, allMongodbPixelycarManufacturers } }) {
 	// const [countries, setCountries] = useState([]);
 	// useEffect(() => {
 	// 	async function fetchData() {
@@ -21,14 +21,14 @@ export default function Home({ data: { allMongodbPixelycarCountries, allMongodbP
 	// }, [])
 	return <div>
 		<h1>Countries</h1>
-		<div style={{display: 'flex', flexWrap: 'wrap', gap: '20px'}}>
-		{allMongodbPixelycarCountries.nodes.map(country => (
-			<Link key={country.code} to={`/${country.code}`} style={{padding: 10}}><div style={{display: "flex", alignItems: 'center'}}><img src={country.flag} alt="flag" style={{width: 50, height: 30, marginRight: 10}} />{country.name}</div></Link>
-		))}
+		<div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+			{allMongodbPixelycarCountries.nodes.map(country => (
+				<Link key={country.code} to={`/${country.code}`} style={{ padding: 10 }}><div style={{ display: "flex", alignItems: 'center' }}><img src={country.flag} alt="flag" style={{ width: 50, height: 30, marginRight: 10 }} />{country.name}</div></Link>
+			))}
 		</div>
 		<h1>Manufacturers</h1>
 		{allMongodbPixelycarManufacturers.nodes.map(manufacturer => (
-			<Link key={manufacturer.code} to={`/${manufacturer.code}`} style={{padding: 10}}>{manufacturer.name}</Link>
+			<Link key={manufacturer.code} to={`/${manufacturer.code}`} style={{ padding: 10 }}>{manufacturer.name}</Link>
 		))}
 	</div>
 }
