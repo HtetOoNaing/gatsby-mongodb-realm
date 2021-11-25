@@ -27,9 +27,11 @@ export default function Home({ data: { allMongodbPixelycarCountries, allMongodbP
 			))}
 		</div>
 		<h1>Manufacturers</h1>
-		{allMongodbPixelycarManufacturers.nodes.map(manufacturer => (
-			<Link key={manufacturer.code} to={`/${manufacturer.code}`} style={{ padding: 10 }}>{manufacturer.name}</Link>
-		))}
+		<div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+			{allMongodbPixelycarManufacturers.nodes.map(manufacturer => (
+				<Link key={manufacturer.code} to={`/${manufacturer.code}`} style={{ padding: 10 }}><div style={{ display: "flex", alignItems: 'center' }}><img src={manufacturer.logo} alt="flag" style={{ width: 30, height: 30, marginRight: 10 }} />{manufacturer.name}</div></Link>
+			))}
+		</div>
 	</div>
 }
 
@@ -50,6 +52,7 @@ export const query = graphql`
         mongodb_id
         name
         code
+				logo
       }
     }
   }
