@@ -35,6 +35,7 @@ const Manufacturer = ({
 export const query = graphql`
   query GetCountries($code: String) {
     allMongodbPixelycarCountries(
+			sort: {fields: name, order: ASC}
       filter: { manufacturers: { elemMatch: { code: { eq: $code } } } }
     ) {
       nodes {
