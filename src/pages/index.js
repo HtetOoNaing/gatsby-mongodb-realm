@@ -37,7 +37,7 @@ export default function Home({ data: { allMongodbPixelycarCountries, allMongodbP
 
 export const query = graphql`
   {
-    allMongodbPixelycarCountries {
+    allMongodbPixelycarCountries(sort: {fields: name, order: ASC}) {
       nodes {
         id
         code
@@ -46,7 +46,7 @@ export const query = graphql`
 				flag
       }
     }
-    allMongodbPixelycarManufacturers {
+    allMongodbPixelycarManufacturers(sort: {fields: name, order: ASC}) {
       nodes {
         id
         mongodb_id
