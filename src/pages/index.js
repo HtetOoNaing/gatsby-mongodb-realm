@@ -23,7 +23,7 @@ export default function Home({ data: { allMongodbPixelycarCountries, allMongodbP
 		<h1>Countries</h1>
 		<div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
 			{allMongodbPixelycarCountries.nodes.map(country => (
-				<Link key={country.code} to={`/${country.code}`} style={{ padding: 10 }}><div style={{ display: "flex", alignItems: 'center' }}><img src={country.flag} alt="flag" style={{ width: 50, height: 30, marginRight: 10 }} />{country.name}</div></Link>
+				<Link key={country.id} to={`/${country.code}`} style={{ padding: 10 }}><div style={{ display: "flex", alignItems: 'center' }}><img src={country.flag} alt="flag" style={{ width: 50, height: 30, marginRight: 10 }} />{country.name}</div></Link>
 			))}
 		</div>
 		<h1>Manufacturers</h1>

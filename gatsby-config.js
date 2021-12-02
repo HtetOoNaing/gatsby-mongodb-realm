@@ -15,7 +15,7 @@ module.exports = {
       resolve: "gatsby-source-mongodb",
       options: {
         dbName: "pixelycar",
-        collection: [`cars`, `countries`, 'manufacturers'],
+        collection: [`cars`, `countries`, 'manufacturers', 'versions', 'companies'],
         connectionString: process.env.MONGODB_SERVER,
         preserveObjectIds: true,
         extraParams: {

@@ -10,7 +10,7 @@ const CarTemplate = ({
     <div>
 			<h1>Cars</h1>
       {nodes.map(car => (
-        <Link key={car.id} to={`/${car.slug}`} style={{ padding: 10 }}>
+        <Link key={car.id} to={`/${car.code}`} style={{ padding: 10 }}>
           {car.name}
         </Link>
       ))}
@@ -28,11 +28,9 @@ export const query = graphql`
     ) {
       nodes {
         id
-        currency
         name
-				slug
+				code
         mongodb_id
-        price
       }
     }
   }
