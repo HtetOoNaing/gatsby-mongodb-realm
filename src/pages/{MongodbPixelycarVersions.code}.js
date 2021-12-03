@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 const CarDetails = ({ data }) => {
-	const car = data.mongodbPixelycarCars;
+	const car = data.mongodbPixelycarVersions;
   return (
     <div>
       <h1>{car.name}</h1>

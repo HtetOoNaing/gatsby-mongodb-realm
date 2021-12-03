@@ -11,8 +11,7 @@ const Car = ({
 			<h1>Cars</h1>
       {nodes.map(version => (
         <Link key={version.id} to={`/${version.code}`} style={{ padding: 10 }}>
-          {version.name}
-					<p>{version.currency} - {version.price}</p>
+					<p>{version.name} <span style={{paddingLeft: 30}}>{version.currency} - {version.price}</span></p>
         </Link>
       ))}
     </div>
